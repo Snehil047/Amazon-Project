@@ -53,8 +53,9 @@
     </div>
     
     <div class="main">
-      <div class="products-grid">
-        <div class="product-container">
+      <div class="products-grid js-products-grid">
+
+        <!-- <div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
               src="images/products/athletic-cotton-socks-6-pairs.jpg">
@@ -199,10 +200,19 @@
           <button class="add-to-cart-button button-primary">
             Add to Cart
           </button>
-        </div>
+        </div> -->
       </div>
+
       <!-- Currently this page has only 3 products, what we generally do is copy the sections that are very similar and just change the HTML contents, and images inisde it, but this process is very hectic and becomes very less manageble in larger projects. What we can do is GENERATE THE HTML VIA JAVASCRIPT. This is a very standardised way of creating new elements -->
     </div>
+    
+
+
+
+    <script src="data/products.js"></script> 
+
+    <!-- data/product.js contain all the products in form of array of objects, the Js will run line by line in top to bottom way, first it will create the array, and then it will goto scripts/amazon.js and will run the forEach() loop to generate all the HTML. -->
+
     <script src="scripts/amazon.js"></script>
   </body>
 </html>
