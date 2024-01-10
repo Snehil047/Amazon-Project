@@ -137,7 +137,15 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
       });
     }
 
-    console.log(cart);
+    let cartQuantity = 0; //calculate the total quantity of the cart.
+
+    cart.forEach((item) => {
+      cartQuantity = cartQuantity + item.quantity;
+    });
+
+    //now to put in on the page we can use DOM.
+
+    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
   });
 });
 
@@ -148,4 +156,10 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
 // 2. If its in the cart then increase the quantity.
 // 3. If its not in the cart, add it into the card.
 
-// As far, we've been using product.name to identify a product and adding it to cart, but in a big e-commerce website, two or more products can have the same name. Henc, it is not recommended to use product name, instead of that we should use produt id. Product id should be unique.
+// As far, we've been using product.name to identify a product and adding it to cart, but in a big e-commerce website, two or more products can have the same name. Hence, it is not recommended to use product name, instead of that we should use produt id. Product id should be unique.
+
+// MAKING THE CART QUANTITY IN THE NAVBAR INTERACTIVE (SHOWS HOW MANY PRODUCT ARE ADDED IN THE CART).
+// Steps to follow ->
+
+// 1. Calculate quantity. -> we know all our products are in array and we can loop through the array and add all the quantities together and display it on the page.
+// 2. Put the quantity on the page.
