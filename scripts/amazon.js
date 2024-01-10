@@ -100,15 +100,18 @@ products.forEach((product) => {
           Added
         </div>
 
-        <button class="add-to-cart-button button-primary">
+        <button class="add-to-cart-button button-primary js-add-to-cart">
           Add to Cart
         </button>
       </div>`;
 });
 
-console.log(productsHTML);
 //now all the HTML is inside this variable, now all that remains is to put it on webpage.
 
 // STEP 03 -> Now, we'll combine all the HTML together in a string and put it on the web page.(We can do that using the DOM)
 
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
+
+document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+  button.addEventListener("click", () => {});
+});
