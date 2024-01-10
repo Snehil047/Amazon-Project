@@ -10,4 +10,10 @@ console.log(cart1);
 
 // but with this approach the problem arises that how are we gonna know that which product is being added to cart. For that we know a concept called Data Attributes in HTML.
 
+// A data attribute allows us to attach any information to an element.
+// SYntax of data Attribute -> A data attribute has to start with data- then we can give it any name. Its just like any other HTML attribute. e.g. data-product-name (kebab-case). The Use of data attribute is that we can attach any information to it, like product name, price etc. (data-bs-attribute).
+
+// To access the the data property in javaScript, we use the attribute 'dataset'. e.g.  ->
+// button.dataset (it will give us all the properties related to that data)
+
 const cart = [];

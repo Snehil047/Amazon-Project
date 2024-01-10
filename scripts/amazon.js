@@ -100,7 +100,9 @@ products.forEach((product) => {
           Added
         </div>
 
-        <button class="add-to-cart-button button-primary js-add-to-cart">
+        <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id="${
+          product.id
+        }">
           Add to Cart
         </button>
       </div>`;
@@ -110,8 +112,40 @@ products.forEach((product) => {
 
 // STEP 03 -> Now, we'll combine all the HTML together in a string and put it on the web page.(We can do that using the DOM)
 
+// now this works just like an object, so to access the name inside it we just have to type after (.) button.dataset.productName. Now notice it got changed from kebab case to camel case.
+
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
-  button.addEventListener("click", () => {});
+  button.addEventListener("click", () => {
+    const productId = button.dataset.productId;
+
+    let matchingItem;
+
+    cart.forEach((item) => {
+      if (productId === item.productId) {
+        matchingItem = item; //it'll be an object, and object are truthy values
+      }
+    });
+
+    if (matchingItem) {
+      matchingItem.quantity += 1;
+    } else {
+      cart.push({
+        productId: productId,
+        quantity: 1,
+      });
+    }
+
+    console.log(cart);
+  });
 });
+
+// as of now when we update the cart, the item is added again in the cart with quantity being 1. This should not happen, when we add an existing product, the quantity should only increse by 1.
+
+// To solve this problem, what we can do is ->
+// 1. Check if the product is already in the cart.
+// 2. If its in the cart then increase the quantity.
+// 3. If its not in the cart, add it into the card.
+
+// As far, we've been using product.name to identify a product and adding it to cart, but in a big e-commerce website, two or more products can have the same name. Henc, it is not recommended to use product name, instead of that we should use produt id. Product id should be unique.
