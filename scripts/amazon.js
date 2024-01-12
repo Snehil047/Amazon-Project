@@ -163,3 +163,21 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
 
 // 1. Calculate quantity. -> we know all our products are in array and we can loop through the array and add all the quantities together and display it on the page.
 // 2. Put the quantity on the page.
+
+// LESSON - 13 ENDED ->
+// we've added the functionality to add
+
+//LESSON - 14 MODULES
+//LESSON - 14 MODULES
+//LESSON - 14 MODULES
+//LESSON - 14 MODULES
+//LESSON - 14 MODULES
+
+// modules are a better way to optimize code.
+// also using various script files can create naming conflicts, i.e. we can accidentally create variable using the same name, and very hard to tell whether we've created same variable before or not.
+
+// STEPS TO CREATE A MODULE ->
+
+// 1. Create a File
+// 2. Don't load the file with <script>
+// 3. By doing this, any variable we create inside the file, will be contained inside the file.
