@@ -181,3 +181,9 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
 // 1. Create a File
 // 2. Don't load the file with <script>
 // 3. By doing this, any variable we create inside the file, will be contained inside the file.
+
+// STEPS TO GET A VARIABLE OUT OF A FILE
+
+// 1. Add type="module" attribute
+// 2. Export
+// 3. Import
