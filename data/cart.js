@@ -16,4 +16,4 @@ console.log(cart1);
 // To access the the data property in javaScript, we use the attribute 'dataset'. e.g.  ->
 // button.dataset (it will give us all the properties related to that data)
 
-const cart = [];
+export const cart = []; //by using export, this variable can be used outside cart.js file.

@@ -51,6 +51,9 @@
 //STEP 02 -> GENERATING THE HTML
 // we're going to use the above data to generate HTML, instead of doing that manually.
 
+import { cart } from "../data/cart.js"; //import the value from cart.js. (..) represents the outside the folder value.
+// import { cart as myCart } from "../data/cart.js";
+
 let productsHTML = "";
 
 products.forEach((product) => {
@@ -187,3 +190,8 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
 // 1. Add type="module" attribute
 // 2. Export
 // 3. Import
+
+// MOST IMPORTANT -> We have to put all our import at the top of the file.
+// The modules wont work if we directly open them with html file in the folder, they only work with live server.
+// You can also rename variable names with help of modules
+// Another benefit of modules is that we dont have to worry about the order of the files. Before we have to load cart,js before amazon.js because the cart has to load first in order for amazon to work. But with modules we dont have to worry.
